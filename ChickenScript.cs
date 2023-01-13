@@ -25,21 +25,21 @@ public class ChickenScript : MonoBehaviour
      {
          rb = GetComponent<Rigidbody>();
          nav = GetComponent<NavMeshAgent>();
-         //UpdateState(currState);
-        // EvadeEnemy();
+         UpdateState(currState);
+         EvadeEnemy();
          Wander();
      }
 
-     /*public void ChangeState(StateType newState)
+     public void ChangeState(StateType newState)
      {
          currState = newState;
-     }*/
+     }
 
      public void UpdateState(StateType CurrentState)
      {
          switch (CurrentState)
          {
-             /*case StateType.state_evade:
+             case StateType.state_evade:
                       currentTime -= 1 * Time.deltaTime;
                       currentTime = 0;
                       if(Cow.dangerous = false)
@@ -50,13 +50,13 @@ public class ChickenScript : MonoBehaviour
                  break;
 
              case StateType.state_wander:
-                 //if (Cow.dangerous)
-                // {
-                 //    ChangeState(StateType.state_evade);
-                 //    currentTime = 5;
-               //  }
+                 if (Cow.dangerous)
+                 {
+                     ChangeState(StateType.state_evade);
+                     currentTime = 5;
+                 }
                  wandering();
-                 //stateDisplay.text = "Evade";
+                 stateDisplay.text = "Evade";
                  break;*/
          }
 
@@ -95,7 +95,7 @@ public class ChickenScript : MonoBehaviour
          return navHit.position;
      }
 
-    /* public void EvadeEnemy()
+     public void EvadeEnemy()
      {
          //Debug.Log("I am evading");
          //actually evade
@@ -111,5 +111,5 @@ public class ChickenScript : MonoBehaviour
              }
          }
          nav.SetDestination(evadePoint.transform.position);
-     }*/
+     }
 }
